@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 
-//TODO: Give the user the option of choosing a different location for images
+//TODO: Give the user the option of choosing a different location for images.
+//TODO: Make all dialog boxes appear on top of other windows when invoked.
 
 namespace Backgrounds
 {
@@ -16,13 +17,15 @@ namespace Backgrounds
         /// Each button click will call a static method and return a
         /// value to the PictureBox control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnNext_Click(object sender, EventArgs e)
         {
             pbxDisplayImage.Image = Images.LoadNextImage();            
         }
 
+        /// <summary>
+        /// The form will load and call the static function to begin browsing for a directory.
+        /// The bulk of the work is being done in that single method in the Images.cs class file.
+        /// </summary>
         private void frmMain_Load(object sender, EventArgs e)
         {
             Images.LoadImagesToList();
